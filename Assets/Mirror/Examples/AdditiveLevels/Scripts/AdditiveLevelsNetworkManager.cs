@@ -167,7 +167,7 @@ namespace Mirror.Examples.AdditiveLevels
             conn.Send(new SceneMessage { sceneName = additiveScenes[0], sceneOperation = SceneOperation.LoadAdditive, customHandling = true });
 
             // We have Network Start Positions in first additive scene...pick one
-            Transform start = GetStartPosition();
+            Transform start = GetStartPosition(conn);
 
             // Instantiate player as child of start position - this will place it in the additive scene
             // This also lets player object "inherit" pos and rot from start position transform

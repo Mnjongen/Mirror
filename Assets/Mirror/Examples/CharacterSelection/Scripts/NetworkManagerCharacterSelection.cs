@@ -65,7 +65,7 @@ namespace Mirror.Examples.CharacterSelection
 
         void OnCreateCharacter(NetworkConnectionToClient conn, CreateCharacterMessage message)
         {
-            Transform startPos = GetStartPosition();
+            Transform startPos = GetStartPosition(conn);
 
             // check if the save data has been pre-set
             if (message.playerName == "")

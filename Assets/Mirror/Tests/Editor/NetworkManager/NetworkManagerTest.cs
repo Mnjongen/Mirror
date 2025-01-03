@@ -130,7 +130,7 @@ namespace Mirror.Tests.NetworkManagers
             Assert.That(NetworkManager.startPositions.Count, Is.EqualTo(1));
             Assert.That(NetworkManager.startPositions, Has.Member(gameObject.transform));
 
-            Assert.That(manager.GetStartPosition(), Is.SameAs(gameObject.transform));
+            Assert.That(manager.GetStartPosition(null), Is.SameAs(gameObject.transform));
 
             NetworkManager.UnRegisterStartPosition(gameObject.transform);
         }

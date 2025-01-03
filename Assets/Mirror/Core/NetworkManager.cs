@@ -1105,7 +1105,8 @@ namespace Mirror
         }
 
         /// <summary>Get the next NetworkStartPosition based on the selected PlayerSpawnMethod.</summary>
-        public virtual Transform GetStartPosition()
+        /// <param name="conn">The connection to get the start position for.</param>
+        public virtual Transform GetStartPosition(NetworkConnectionToClient conn)
         {
             // first remove any dead transforms
             startPositions.RemoveAll(t => t == null);
@@ -1343,7 +1344,7 @@ namespace Mirror
         // The default implementation for this function creates a new player object from the playerPrefab.
         public virtual void OnServerAddPlayer(NetworkConnectionToClient conn)
         {
-            Transform startPos = GetStartPosition();
+            Transform startPos = GetStartPosition(conn);
             GameObject player = startPos != null
                 ? Instantiate(playerPrefab, startPos.position, startPos.rotation)
                 : Instantiate(playerPrefab);

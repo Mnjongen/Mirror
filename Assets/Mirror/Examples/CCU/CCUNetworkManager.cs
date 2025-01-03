@@ -71,7 +71,7 @@ namespace Mirror.Examples.CCU
         // - needs to be deterministic so every CCU test results in the same
         // - needs to be random so not only are the spawn positions spread out
         //   randomly, we also have a random amount of players per spawn position
-        public override Transform GetStartPosition()
+        public override Transform GetStartPosition(NetworkConnectionToClient conn)
         {
             // first remove any dead transforms
             startPositions.RemoveAll(t => t == null);

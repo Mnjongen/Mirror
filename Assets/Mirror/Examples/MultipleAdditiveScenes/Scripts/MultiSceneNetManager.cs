@@ -54,7 +54,7 @@ namespace Mirror.Examples.MultipleAdditiveScenes
             // Wait for end of frame before adding the player to ensure Scene Message goes first
             yield return new WaitForEndOfFrame();
 
-            Transform startPos = GetStartPosition();
+            Transform startPos = GetStartPosition(conn);
             GameObject player = startPos != null
                 ? Instantiate(playerPrefab, startPos.position, startPos.rotation)
                 : Instantiate(playerPrefab);

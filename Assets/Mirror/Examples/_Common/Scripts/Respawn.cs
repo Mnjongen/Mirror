@@ -34,7 +34,7 @@ namespace Mirror.Examples.Common
             yield return new WaitForSeconds(respawnTime);
 
             // Respawn Player - fallback to Vector3.up * 5f to avoid spawning on another player.
-            Transform spawnPoint = NetworkManager.singleton.GetStartPosition();
+            Transform spawnPoint = NetworkManager.singleton.GetStartPosition(conn);
             Vector3 position = spawnPoint != null ? spawnPoint.position : Vector3.up * 5f;
             Quaternion rotation = spawnPoint != null ? spawnPoint.rotation : Quaternion.identity;
 
